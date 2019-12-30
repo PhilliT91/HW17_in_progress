@@ -10,21 +10,7 @@ int openTagCount=0;
 int closeTagcount=0;
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-      /*if (qName.equals("user")) {
-            String firstName = attributes.getValue("firstName");
-            String lastName = attributes.getValue("lastName");
-            String age = attributes.getValue("age");
-            String email = attributes.getValue("email");
-            String technology = attributes.getValue("technology");
-            userList.add(new User(firstName, lastName, Integer.valueOf(age), email, technology, null));
-        } else if (qName.equals("admin")) {
 
-            String firstName = attributes.getValue("firstName");
-            String lastName = attributes.getValue("lastName");
-            String email = attributes.getValue("email");
-            String permission = attributes.getValue("permission");
-            adminList.add(new Admin(firstName, lastName, email, permission));
-        }*/
         if(stack.empty()){
             stack.push(qName);
         }
@@ -40,7 +26,7 @@ int closeTagcount=0;
 
     @Override
     public void startDocument() throws SAXException {
-        // Тут будет логика реакции на начало документа
+
     }
 
     @Override
