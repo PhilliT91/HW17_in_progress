@@ -6,10 +6,11 @@ import java.util.Stack;
 
 public class XMLHandler extends DefaultHandler {
 Stack<String> stack = new Stack<String>();
-
+int openTagCount=0;
+int closeTagcount=0;
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        /*if (qName.equals("user")) {
+      /*if (qName.equals("user")) {
             String firstName = attributes.getValue("firstName");
             String lastName = attributes.getValue("lastName");
             String age = attributes.getValue("age");
@@ -29,8 +30,11 @@ Stack<String> stack = new Stack<String>();
         }
        else if(!qName.equals(stack.peek())){
             stack.push(qName);
-
+            System.out.println();
     }
+        System.out.println("op "+ openTagCount);
+        openTagCount++;
+        ;
 
     }
 
@@ -60,6 +64,9 @@ Stack<String> stack = new Stack<String>();
         else{
            stack.push(qName);
        }
+        System.out.println("cl "+closeTagcount);
+        closeTagcount++;
+
     }
 }
 
